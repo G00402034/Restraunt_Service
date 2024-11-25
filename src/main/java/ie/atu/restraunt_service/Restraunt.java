@@ -12,7 +12,6 @@ public class Restraunt
     private String name;
     private String address;
     private String contactNumber;
-    private String logoUrl;
     private List<String> cuisine;
     private OperatingHours operatingHours;
     private List<MenuItem> menu;
