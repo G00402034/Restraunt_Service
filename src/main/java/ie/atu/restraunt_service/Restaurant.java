@@ -13,18 +13,18 @@ import java.util.List;
         private String name;
         private String address;
         private String contact;
-        private String cuisine; // e.g., Italian, Chinese
-        private List<MenuItem> menu; // List of menu items
+        private String cuisine;
+        private List<MenuItem> menu;
         private String operatingHours;
     }
 
     @Data
     class MenuItem {
-        private String id; // Unique identifier for the menu item
-        private String name; // Name of the menu item
-        private String description; // Description of the menu item
-        private double price; // Price of the menu item
-        private boolean available; // Whether the menu item is available
+        private String id;
+        private String name;
+        private String description;
+        private double price;
+        private boolean available;
     }
 
 
