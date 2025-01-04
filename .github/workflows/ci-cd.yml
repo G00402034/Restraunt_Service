@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       # Checkout the code
@@ -33,7 +33,7 @@ jobs:
           docker push my-docker-repo/restaurant-service:latest
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: build-and-push
 
     steps:
