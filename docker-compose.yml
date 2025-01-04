@@ -14,6 +14,7 @@ services:
       - MONGO_DATABASE=restaurant_service_db
     depends_on:
       - restaurant-db
+    command: mvn test
 
   order-service:
     build:
@@ -32,6 +33,7 @@ services:
     depends_on:
       - order-db
       - rabbitmq
+    command: mvn test
 
   delivery-service:
     build:
@@ -50,6 +52,7 @@ services:
     depends_on:
       - delivery-db
       - rabbitmq
+    command: mvn test
 
   payment-service:
     build:
@@ -68,6 +71,7 @@ services:
     depends_on:
       - payment-db
       - rabbitmq
+    command: mvn test
 
   notification-service:
     build:
@@ -81,6 +85,7 @@ services:
       - RABBITMQ_HOST=rabbitmq
     depends_on:
       - rabbitmq
+    command: mvn test
 
   restaurant-db:
     image: mongo:latest
@@ -126,8 +131,8 @@ services:
     image: rabbitmq:3-management
     container_name: rabbitmq
     ports:
-      - "5672:5672"       # AMQP protocol
-      - "15672:15672"     # Management UI
+      - "5672:5672"
+      - "15672:15672"
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
